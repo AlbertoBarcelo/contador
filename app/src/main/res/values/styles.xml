@@ -1,0 +1,14 @@
+<!-- res/values/styles.xml -->
+<resources>
+    <!-- Estilo personalizado para el Toolbar -->
+    <style name="CenteredToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:gravity">center</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <!-- Estilo personalizado para los botones -->
+    <style name="CustomButtonStyle">
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+</resources>
