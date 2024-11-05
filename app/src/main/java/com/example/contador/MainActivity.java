@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Referencia al TextView
-        mCountTextView = findViewById(R.id.text_count);
+        //mCountTextView = findViewById(R.id.text_count);
 
         // Configura el botón Toast
         Button buttonToast = findViewById(R.id.button_toast);

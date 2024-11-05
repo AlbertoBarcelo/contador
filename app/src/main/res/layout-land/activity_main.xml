@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
@@ -15,44 +15,41 @@
         android:titleTextColor="#FFFFFF"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <!-- Botón TOAST alineado en el lado izquierdo -->
     <Button
         android:id="@+id/button_toast"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:backgroundTint="@color/primaryColor"
         android:text="TOAST"
         android:background="@drawable/buttomback"
         android:textColor="#FFFFFF" />
 
-    <!-- Área amarilla con botones en los bordes y contador en el centro -->
-
+    <!-- Botón COUNT debajo de TOAST, alineado en el lado izquierdo -->
     <Button
         android:id="@+id/button_count"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginLeft="20dp"
+        android:layout_below="@id/button_toast"
+        android:layout_marginStart="20dp"
         android:backgroundTint="@color/primaryColor"
         android:text="COUNT"
         android:background="@drawable/buttomback"
         android:textColor="#FFFFFF" />
 
+    <!-- Área amarilla con contador centrado, alineada a la derecha de los botones -->
     <RelativeLayout
         android:id="@+id/centerLayout"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="300dp"
-        android:layout_below="@id/toolbar"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="37dp"
-        android:layout_marginRight="40dp"
-        android:layout_weight="1"
+        android:layout_toEndOf="@id/button_toast"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="20dp"
         android:background="#FFE500"
         tools:context=".MainActivity">
-
-        <!-- Botón TOAST en la parte superior del área amarilla -->
 
         <!-- Contador centrado en el área amarilla -->
         <TextView
@@ -64,10 +61,6 @@
             android:textAlignment="center"
             android:textColor="#673AB7"
             android:textSize="200sp" />
-
-        <!-- Botón COUNT en la parte inferior del área amarilla -->
-
-
     </RelativeLayout>
 
 </RelativeLayout>
