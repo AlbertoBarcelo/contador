@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
 
-    <!-- Toolbar con el título "Hello Toast" -->
+    <!-- Toolbar con el título "Hello Constraint" -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
-        android:title="Hello Toast"
+        android:title="Hello Constraint"
         android:titleTextColor="#FFFFFF"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
+    <!-- Botón TOAST -->
+
+    <!-- Botón COUNT -->
+
+    <!-- Área amarilla con el contador centrado -->
     <Button
         android:id="@+id/button_toast"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/buttomback"
         android:backgroundTint="@color/primaryColor"
         android:text="TOAST"
-        android:background="@drawable/buttomback"
-        android:textColor="#FFFFFF" />
-
-    <!-- Área amarilla con botones en los bordes y contador en el centro -->
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/centerLayout"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintWidth_percent="0.3" />
 
     <Button
         android:id="@+id/button_count"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="164dp"
+        android:background="@drawable/buttomback"
         android:backgroundTint="@color/primaryColor"
         android:text="COUNT"
-        android:background="@drawable/buttomback"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/centerLayout"
+        app:layout_constraintTop_toBottomOf="@id/button_toast"
+        app:layout_constraintWidth_percent="0.3" />
 
     <RelativeLayout
         android:id="@+id/centerLayout"
-        android:layout_width="200dp"
-        android:layout_height="300dp"
-        android:layout_below="@id/toolbar"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="37dp"
-        android:layout_marginRight="40dp"
-        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#FFE500"
-        tools:context=".MainActivity">
-
-        <!-- Botón TOAST en la parte superior del área amarilla -->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintLeft_toRightOf="@id/button_toast"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.309"
+        app:layout_constraintWidth_percent="0.7">
 
         <!-- Contador centrado en el área amarilla -->
         <TextView
@@ -65,9 +79,6 @@
             android:textColor="#673AB7"
             android:textSize="200sp" />
 
-        <!-- Botón COUNT en la parte inferior del área amarilla -->
-
-
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

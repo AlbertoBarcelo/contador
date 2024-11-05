@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
 
-    <!-- Toolbar con el título "Hello Toast" -->
+    <!-- Toolbar con el título "Hello Constraint" -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
-        android:title="Hello Toast"
+        android:title="Hello Constraint"
         android:titleTextColor="#FFFFFF"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <!-- Botón TOAST alineado en el lado izquierdo -->
+    <!-- Botón TOAST apilado en el lado izquierdo -->
+
+    <!-- Botón COUNT debajo del botón TOAST en el lado izquierdo -->
+
+    <!-- Área amarilla con el contador centrado en la parte derecha -->
+
     <Button
         android:id="@+id/button_toast"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/buttomback"
         android:backgroundTint="@color/primaryColor"
         android:text="TOAST"
-        android:background="@drawable/buttomback"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/centerLayout"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintWidth_percent="0.3" />
 
-    <!-- Botón COUNT debajo de TOAST, alineado en el lado izquierdo -->
     <Button
         android:id="@+id/button_count"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_toast"
-        android:layout_marginStart="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/buttomback"
         android:backgroundTint="@color/primaryColor"
         android:text="COUNT"
-        android:background="@drawable/buttomback"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/centerLayout"
+        app:layout_constraintTop_toBottomOf="@id/button_toast"
+        app:layout_constraintWidth_percent="0.3" />
 
-    <!-- Área amarilla con contador centrado, alineada a la derecha de los botones -->
     <RelativeLayout
         android:id="@+id/centerLayout"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        android:layout_toEndOf="@id/button_toast"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="409dp"
+        android:layout_height="230dp"
         android:background="#FFE500"
-        tools:context=".MainActivity">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintLeft_toRightOf="@id/button_toast"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.769"
+        app:layout_constraintWidth_percent="0.7">
 
         <!-- Contador centrado en el área amarilla -->
         <TextView
@@ -60,7 +79,8 @@
             android:text="0"
             android:textAlignment="center"
             android:textColor="#673AB7"
-            android:textSize="200sp" />
+            android:textSize="150sp" />
+
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
